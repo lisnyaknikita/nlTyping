@@ -1,6 +1,7 @@
 @import '@/assets/styles/variables.scss';
 
 .userBtn {
+  margin-bottom: 5px;
   font-size: 32px;
   cursor: pointer;
   background-color: transparent;
@@ -8,9 +9,9 @@
   color: $blackColorLight;
   width: 32px;
   height: 32px;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease;
 
   &:hover {
-    color: #000;
+    transform: translateY(-2px);
   }
 }

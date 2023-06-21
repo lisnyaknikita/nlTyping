@@ -1,14 +1,22 @@
+'use client';
+
 import { FC } from 'react';
 
 import classes from './UserBtn.module.scss';
 
 import { FiUser } from 'react-icons/fi';
 
+import Link from 'next/link';
+
+import { Tooltip } from 'antd';
+
 const UserBtn: FC = () => {
   return (
-    <button className={classes.userBtn}>
-      <FiUser />
-    </button>
+    <Tooltip placement='bottom' title='User info' mouseEnterDelay={0.2}>
+      <Link href='/user' className={classes.userBtn}>
+        <FiUser />
+      </Link>
+    </Tooltip>
   );
 };
 
