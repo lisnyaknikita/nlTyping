@@ -1,6 +1,16 @@
+@import '@/assets/styles/variables.scss';
+
 .userBtn {
-  font-size: 40px;
+  font-size: 32px;
+  cursor: pointer;
   background-color: transparent;
   border: none;
-  cursor: pointer;
+  color: $blackColorLight;
+  width: 32px;
+  height: 32px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #000;
+  }
 }

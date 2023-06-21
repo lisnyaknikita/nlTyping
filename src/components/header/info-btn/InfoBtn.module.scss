@@ -1,6 +1,36 @@
+@import '@/assets/styles/variables.scss';
+
 .infoBtn {
-  font-size: 40px;
+  font-size: 32px;
   cursor: pointer;
   background-color: transparent;
   border: none;
+  color: $blackColorLight;
+  width: 32px;
+  height: 32px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.dropdown {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s;
+  position: absolute;
+  bottom: -70px;
+  right: 0;
+  padding: 20px;
+  border-radius: 10px;
+  color: $blackColorLight;
+  background-color: $secondaryLight;
+
+  &:global(.open) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
 }
