@@ -1,0 +1,41 @@
+@import '@/assets/styles/variables.scss';
+
+.duration {
+  margin-bottom: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.durationBody {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  padding: 25px 120px;
+  background-color: $secondaryLight;
+  border-radius: 10px;
+}
+
+.durationText {
+  font-size: 22px;
+  color: $blackColorLight;
+}
+
+.durationButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.durationBtn {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22px;
+  color: $blackColorLight;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 55px;
+
+  &:global(.active) {
+    color: #a44200;
+  }
+}

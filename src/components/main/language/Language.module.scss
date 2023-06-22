@@ -1,0 +1,18 @@
+@import '@/assets/styles/variables.scss';
+
+.language {
+  margin-bottom: 38px;
+  display: flex;
+  justify-content: center;
+}
+
+.languageBtn {
+  font-size: 22px;
+  font-family: 'Roboto Mono';
+  padding: 10px 97px;
+  background-color: $secondaryLight;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: $blackColorLight;
+}

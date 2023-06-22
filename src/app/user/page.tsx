@@ -2,6 +2,11 @@ import { FC } from 'react';
 
 // import classes from '.';
 
+// export const metadata = {
+//   title: 'User info | nlTyping',
+//   description: 'User info',
+// };
+
 const page: FC = () => {
   return (
     <div style={{ textAlign: 'center', marginTop: 100 }}>
