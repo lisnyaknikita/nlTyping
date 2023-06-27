@@ -1,0 +1,30 @@
+@import '@/assets/styles/variables.scss';
+
+.languagePopUp {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 358px;
+  height: 146px;
+}
+
+.languageList {
+  list-style: none;
+}
+
+.languageItem {
+  &:not(:last-child) {
+    border-bottom: 1px solid $blackColorLight;
+  }
+}
+
+.languageButton {
+  padding: 10px 0;
+  width: 100%;
+  font-size: 24px;
+  color: $blackColorLight;
+  background-color: $secondaryLight;
+  border: none;
+  cursor: pointer;
+}
