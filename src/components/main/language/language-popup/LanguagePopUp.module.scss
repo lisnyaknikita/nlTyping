@@ -1,12 +1,24 @@
 @import '@/assets/styles/variables.scss';
 
 .languagePopUp {
+  border-radius: 10px;
+  overflow: hidden;
   position: absolute;
   top: -160px;
   left: 50%;
   transform: translateX(-50%);
   width: 358px;
   height: 146px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s;
+
+  &:global(.open) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
 }
 
 .languageList {
@@ -27,4 +39,9 @@
   background-color: $secondaryLight;
   border: none;
   cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: darken($secondaryLight, 10%);
+  }
 }

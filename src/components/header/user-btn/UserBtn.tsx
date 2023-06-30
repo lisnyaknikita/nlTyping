@@ -12,7 +12,7 @@ import { Tooltip } from 'antd';
 
 const UserBtn: FC = () => {
   return (
-    <Tooltip placement='bottom' title='User info' mouseEnterDelay={0.2}>
+    <Tooltip placement='top' title='User info' mouseEnterDelay={0.2}>
       <Link href='/user' className={classes.userBtn}>
         <FiUser />
       </Link>

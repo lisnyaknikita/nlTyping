@@ -11,8 +11,13 @@ const Language: FC = () => {
 
   return (
     <div className={classes.language}>
-      <button className={classes.languageBtn}>Language</button>
-      <LanguagePopUp isPopUpOpen={isPopUpOpen} />
+      <button
+        className={classes.languageBtn}
+        onClick={() => setIsPopUpOpen((prev) => !prev)}
+      >
+        Language
+      </button>
+      {isPopUpOpen && <LanguagePopUp isPopUpOpen={isPopUpOpen} />}
     </div>
   );
 };

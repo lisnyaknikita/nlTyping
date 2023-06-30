@@ -38,7 +38,7 @@ const InfoBtn: FC = () => {
 
   return (
     <>
-      <Tooltip placement='bottom' title='Info' mouseEnterDelay={0.2}>
+      <Tooltip placement='top' title='Info' mouseEnterDelay={0.2}>
         <button
           ref={dropdownRef}
           type='button'
