@@ -7,7 +7,7 @@ import classes from './Language.module.scss';
 import LanguagePopUp from './language-popup/LanguagePopUp';
 
 const Language: FC = () => {
-  const [isPopUpOpen, setIsPopUpOpen] = useState(true);
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
 
   return (
     <div className={classes.language}>
@@ -17,7 +17,10 @@ const Language: FC = () => {
       >
         Language
       </button>
-      {isPopUpOpen && <LanguagePopUp isPopUpOpen={isPopUpOpen} />}
+      <LanguagePopUp
+        isPopUpOpen={isPopUpOpen}
+        // setIsPopUpOpen={setIsPopUpOpen}
+      />
     </div>
   );
 };
