@@ -9,7 +9,6 @@
   transform: translateX(-50%);
   width: 358px;
   height: 146px;
-
   opacity: 1;
   visibility: visible;
   pointer-events: all;
@@ -36,7 +35,7 @@
 }
 
 .languageButton {
-  padding: 10px 0;
+  padding: 8px 0;
   width: 100%;
   font-size: 24px;
   color: $blackColorLight;
@@ -44,6 +43,7 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s;
+  font-family: 'Roboto Mono', monospace;
 
   &:hover {
     background-color: darken($secondaryLight, 10%);
