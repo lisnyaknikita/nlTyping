@@ -11,6 +11,16 @@
   background-color: $secondaryLight;
   display: flex;
   align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s;
+
+  &:global(.open) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
 
   > button:first-child {
     border-top-left-radius: 10px;

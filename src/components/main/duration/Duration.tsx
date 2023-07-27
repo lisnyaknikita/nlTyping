@@ -22,6 +22,7 @@ const Duration: FC = () => {
                 classes.durationBtn,
                 isActive === button.id && 'active'
               )}
+              key={button.id}
               onClick={() => setIsActive(button.id)}
             >
               {button.duration}s

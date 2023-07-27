@@ -11,9 +11,12 @@ const Footer: FC = () => {
 
   return (
     <>
-      <ThemePopup />
+      <ThemePopup isPopUpOpen={isPopUpOpen} />
       <footer className={classes.footer}>
-        <button className={classes.footerBtn}>
+        <button
+          className={classes.footerBtn}
+          onClick={() => setIsPopUpOpen((prev) => !prev)}
+        >
           <svg
             width='50'
             height='50'
