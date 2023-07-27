@@ -1,12 +1,17 @@
-import { FC } from 'react';
+'use client';
+import { FC, useState } from 'react';
 
 import classes from './Footer.module.scss';
 
 import { colorThemes } from '@/utils/colorThemes';
+import ThemePopup from './theme-popup/ThemePopup';
 
 const Footer: FC = () => {
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+
   return (
     <>
+      <ThemePopup />
       <footer className={classes.footer}>
         <button className={classes.footerBtn}>
           <svg
