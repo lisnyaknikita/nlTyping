@@ -2,8 +2,6 @@ import { FC } from 'react';
 
 import classes from './Footer.module.scss';
 
-import Modal from '@/ui/modal-window/Modal';
-
 import { colorThemes } from '@/utils/colorThemes';
 
 const Footer: FC = () => {
@@ -26,15 +24,6 @@ const Footer: FC = () => {
           <span>Color scheme</span>
         </button>
       </footer>
-      <Modal title='Select a color theme'>
-        <ul className={classes.themesList}>
-          {colorThemes.map((theme) => (
-            <li className={classes.themesItem} key={theme.id}>
-              <button className={classes.themeButton}>{theme.theme}</button>
-            </li>
-          ))}
-        </ul>
-      </Modal>
     </>
   );
 };
