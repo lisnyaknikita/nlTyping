@@ -11,13 +11,21 @@
   align-items: center;
   gap: 38px;
   padding: 25px 120px;
-  background-color: $secondaryLight;
+  background-color: $secondaryDark;
   border-radius: 10px;
+
+  &:global(.light) {
+    background-color: $secondaryLight;
+  }
 }
 
 .durationText {
   font-size: 22px;
-  color: $blackColorLight;
+  color: $blackColorDark;
+
+  &:global(.light) {
+    color: $blackColorLight;
+  }
 }
 
 .durationButtons {
@@ -29,11 +37,15 @@
 .durationBtn {
   font-family: 'Roboto Mono', monospace;
   font-size: 22px;
-  color: $blackColorLight;
+  color: $blackColorDark;
   background-color: transparent;
   border: none;
   cursor: pointer;
   width: 55px;
+
+  &:global(.light) {
+    color: $blackColorLight;
+  }
 
   &:global(.active) {
     color: #a44200;

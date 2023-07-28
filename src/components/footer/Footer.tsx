@@ -4,6 +4,7 @@ import { FC, useState } from 'react';
 import classes from './Footer.module.scss';
 
 import { colorThemes } from '@/utils/colorThemes';
+
 import ThemePopup from './theme-popup/ThemePopup';
 
 const Footer: FC = () => {

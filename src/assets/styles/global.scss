@@ -18,6 +18,10 @@ body {
 body {
   font-family: 'Roboto Mono', monospace;
   background-color: $primaryLight;
+
+  &.dark {
+    background-color: $primaryDark;
+  }
 }
 
 .wrapper {

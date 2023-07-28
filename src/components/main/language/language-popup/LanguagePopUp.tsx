@@ -6,13 +6,9 @@ import clsx from 'clsx';
 
 interface ILanguagePopUpProps {
   isPopUpOpen: boolean;
-  // setIsPopUpOpen: (status: boolean) => void;
 }
 
-const LanguagePopUp: FC<ILanguagePopUpProps> = ({
-  isPopUpOpen,
-  // setIsPopUpOpen,
-}) => {
+const LanguagePopUp: FC<ILanguagePopUpProps> = ({ isPopUpOpen }) => {
   return (
     <div className={classes.languagePopUp}>
       <ul className={clsx(classes.languageList, isPopUpOpen && 'open')}>

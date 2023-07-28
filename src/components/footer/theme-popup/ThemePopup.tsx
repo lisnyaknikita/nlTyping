@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import classes from './ThemePopup.module.scss';
+
 import clsx from 'clsx';
 
 interface IThemePopupProps {

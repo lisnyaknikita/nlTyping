@@ -5,10 +5,14 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
-  color: $blackColorLight;
+  color: $blackColorDark;
   width: 32px;
   height: 32px;
   transition: transform 0.3s ease;
+
+  &:global(.light) {
+    color: $blackColorLight;
+  }
 
   &:hover {
     transform: translateY(-2px);
@@ -25,8 +29,13 @@
   right: 0;
   padding: 20px;
   border-radius: 10px;
-  color: $blackColorLight;
-  background-color: $secondaryLight;
+  color: $blackColorDark;
+  background-color: $secondaryDark;
+
+  &:global(.light) {
+    color: $blackColorLight;
+    background-color: $secondaryLight;
+  }
 
   a {
     color: #599ca2;
