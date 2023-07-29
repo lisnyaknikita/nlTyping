@@ -1,5 +1,5 @@
 'use client';
-import { FC, useState } from 'react';
+import { FC, useContext, useState } from 'react';
 
 import classes from './Footer.module.scss';
 
@@ -7,15 +7,20 @@ import { colorThemes } from '@/utils/colorThemes';
 
 import ThemePopup from './theme-popup/ThemePopup';
 
+import clsx from 'clsx';
+import { ThemeContext } from '@/providers/ThemeContext';
+
 const Footer: FC = () => {
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+
+  const { darkMode } = useContext(ThemeContext);
 
   return (
     <>
       <ThemePopup isPopUpOpen={isPopUpOpen} />
       <footer className={classes.footer}>
         <button
-          className={classes.footerBtn}
+          className={clsx(classes.footerBtn, !darkMode && 'light')}
           onClick={() => setIsPopUpOpen((prev) => !prev)}
         >
           <svg

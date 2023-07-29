@@ -48,6 +48,10 @@
   }
 
   &:global(.active) {
+    color: $selectionColorDark;
+  }
+
+  &:global(.light.active) {
     color: #a44200;
   }
 }

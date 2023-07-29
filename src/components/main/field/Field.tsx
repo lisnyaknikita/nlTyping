@@ -1,13 +1,15 @@
-import { FC } from 'react';
+'use client';
+import { FC, useContext } from 'react';
 
 import classes from './Field.module.scss';
 
+import clsx from 'clsx';
+import { ThemeContext } from '@/providers/ThemeContext';
+
 const Field: FC = () => {
-  return (
-    <div className={classes.field}>
-      
-    </div>
-  );
+  const { darkMode } = useContext(ThemeContext);
+
+  return <div className={clsx(classes.field, !darkMode && 'light')}></div>;
 };
 
 export default Field;

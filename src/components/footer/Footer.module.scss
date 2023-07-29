@@ -18,14 +18,30 @@
   svg {
     width: 50px;
     height: 50px;
+
+    path {
+      fill: $blackColorDark;
+    }
   }
 
   span {
-    color: $blackColorLight;
+    color: $blackColorDark;
     font-family: 'Roboto Mono', monospace;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  }
+
+  &:global(.light) {
+    span {
+      color: $blackColorLight;
+    }
+
+    svg {
+      path {
+        fill: $blackColorLight;
+      }
+    }
   }
 }

@@ -30,7 +30,11 @@
 
 .languageItem {
   &:not(:last-child) {
-    border-bottom: 1px solid $blackColorLight;
+    border-bottom: 1px solid $blackColorDark;
+
+    &:global(.light) {
+      border-bottom: 1px solid $blackColorLight;
+    }
   }
 }
 
@@ -38,14 +42,23 @@
   padding: 8px 0;
   width: 100%;
   font-size: 24px;
-  color: $blackColorLight;
-  background-color: $secondaryLight;
+  color: $blackColorDark;
+  background-color: $secondaryDark;
   border: none;
   cursor: pointer;
   transition: all 0.3s;
   font-family: 'Roboto Mono', monospace;
 
   &:hover {
-    background-color: darken($secondaryLight, 10%);
+    background-color: darken($secondaryDark, 10%);
+  }
+
+  &:global(.light) {
+    color: $blackColorLight;
+    background-color: $secondaryLight;
+
+    &:hover {
+      background-color: darken($secondaryLight, 10%);
+    }
   }
 }
