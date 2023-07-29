@@ -1,4 +1,12 @@
+@import '@/assets/styles/variables.scss';
+
 .logo {
+  &:global(.light) {
+    path {
+      fill: $blackColorLight;
+    }
+  }
   path {
+    fill: $blackColorDark;
   }
 }

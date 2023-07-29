@@ -11,9 +11,14 @@
   font-size: 22px;
   font-family: 'Roboto Mono';
   padding: 10px 97px;
-  background-color: $secondaryLight;
+  background-color: $secondaryDark;
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  color: $blackColorLight;
+  color: $blackColorDark;
+
+  &:global(.light) {
+    background-color: $secondaryLight;
+    color: $blackColorLight;
+  }
 }

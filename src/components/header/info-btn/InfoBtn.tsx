@@ -1,6 +1,13 @@
 'use client';
 
-import { FC, MouseEventHandler, useEffect, useRef, useState } from 'react';
+import {
+  FC,
+  MouseEventHandler,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 import classes from './InfoBtn.module.scss';
 
@@ -8,11 +15,14 @@ import { FiInfo } from 'react-icons/fi';
 
 import clsx from 'clsx';
 import { Tooltip } from 'antd';
+import { ThemeContext } from '@/providers/ThemeContext';
 
 const InfoBtn: FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLButtonElement>(null);
   const insideRef = useRef<HTMLDivElement>(null);
+
+  const { darkMode } = useContext(ThemeContext);
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
     setIsDropdownOpen((prev) => !prev);
@@ -42,7 +52,7 @@ const InfoBtn: FC = () => {
         <button
           ref={dropdownRef}
           type='button'
-          className={classes.infoBtn}
+          className={clsx(classes.infoBtn, !darkMode && 'light')}
           onClick={handleClick}
         >
           <FiInfo />
@@ -50,7 +60,11 @@ const InfoBtn: FC = () => {
       </Tooltip>
 
       <div
-        className={clsx(classes.dropdown, isDropdownOpen && 'open')}
+        className={clsx(
+          classes.dropdown,
+          isDropdownOpen && 'open',
+          !darkMode && 'light'
+        )}
         ref={insideRef}
       >
         <p>

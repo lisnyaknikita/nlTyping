@@ -1,13 +1,22 @@
-import { FC } from 'react';
+'use client';
+
+import { FC, useContext } from 'react';
 
 import classes from './Logo.module.scss';
+
 import Link from 'next/link';
 
+import { ThemeContext } from '@/providers/ThemeContext';
+
+import clsx from 'clsx';
+
 const Logo: FC = () => {
+  const { darkMode } = useContext(ThemeContext);
+
   return (
     <Link href='/'>
       <svg
-        className={classes.logo}
+        className={clsx(classes.logo, !darkMode && 'light')}
         width='164'
         height='25'
         viewBox='0 0 164 25'

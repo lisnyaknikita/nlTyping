@@ -10,12 +10,33 @@
 html,
 body {
   max-width: 100vw;
+  height: 100%;
   overflow-x: hidden;
+  position: relative;
 }
 
 body {
   font-family: 'Roboto Mono', monospace;
   background-color: $primaryLight;
+
+  &.dark {
+    background-color: $primaryDark;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0 auto;
 }
 
 a {

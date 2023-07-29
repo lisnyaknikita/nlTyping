@@ -1,24 +1,29 @@
-import { FC, Ref, useEffect, useRef } from 'react';
+import { FC, Ref, useContext, useEffect, useRef } from 'react';
 
 import classes from './LanguagePopUp.module.scss';
 import { languages } from './languages';
 import clsx from 'clsx';
+import { ThemeContext } from '@/providers/ThemeContext';
 
 interface ILanguagePopUpProps {
   isPopUpOpen: boolean;
-  // setIsPopUpOpen: (status: boolean) => void;
 }
 
-const LanguagePopUp: FC<ILanguagePopUpProps> = ({
-  isPopUpOpen,
-  // setIsPopUpOpen,
-}) => {
+const LanguagePopUp: FC<ILanguagePopUpProps> = ({ isPopUpOpen }) => {
+  const { darkMode } = useContext(ThemeContext);
+
   return (
     <div className={classes.languagePopUp}>
       <ul className={clsx(classes.languageList, isPopUpOpen && 'open')}>
         {languages.map((language) => (
-          <li className={classes.languageItem} key={language.id}>
-            <button type='button' className={classes.languageButton}>
+          <li
+            className={clsx(classes.languageItem, !darkMode && 'light')}
+            key={language.id}
+          >
+            <button
+              type='button'
+              className={clsx(classes.languageButton, !darkMode && 'light')}
+            >
               {language.language}
             </button>
           </li>
