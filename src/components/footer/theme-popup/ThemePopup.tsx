@@ -12,7 +12,15 @@ interface IThemePopupProps {
 }
 
 const ThemePopup: FC<IThemePopupProps> = ({ isPopUpOpen }) => {
-  const { darkMode } = useContext(ThemeContext);
+  const { darkMode, toggleDarkMode } = useContext(ThemeContext);
+
+  const handleLightTheme = () => {
+    darkMode && toggleDarkMode();
+  };
+
+  const handleDarkTheme = () => {
+    !darkMode && toggleDarkMode();
+  };
 
   return (
     <div
@@ -22,10 +30,16 @@ const ThemePopup: FC<IThemePopupProps> = ({ isPopUpOpen }) => {
         !darkMode && 'light'
       )}
     >
-      <button className={clsx(classes.themePopUpButton, !darkMode && 'light')}>
+      <button
+        className={clsx(classes.themePopUpButton, !darkMode && 'light')}
+        onClick={handleLightTheme}
+      >
         Light
       </button>
-      <button className={clsx(classes.themePopUpButton, !darkMode && 'light')}>
+      <button
+        className={clsx(classes.themePopUpButton, !darkMode && 'light')}
+        onClick={handleDarkTheme}
+      >
         Dark
       </button>
     </div>
