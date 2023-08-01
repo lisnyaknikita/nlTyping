@@ -5,13 +5,23 @@
   height: 280px;
   border-radius: 10px;
   background-color: $secondaryDark;
-  margin: 0 auto;
-  padding: 30px 35px;
   font-family: 'Roboto Mono', monospace;
   font-size: 22px;
+  line-height: 36px;
+  text-align: center;
   color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 
   &:global(.light) {
     background-color: $secondaryLight;
   }
+}
+
+.wordsBox {
+  width: 600px;
+  height: 250px;
+  overflow: hidden;
 }
