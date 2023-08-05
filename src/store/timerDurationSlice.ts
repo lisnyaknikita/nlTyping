@@ -7,7 +7,7 @@ interface IDurationState {
 }
 
 const initialState: IDurationState = {
-  seconds: 5,
+  seconds: 15,
 };
 
 export const timerDurationSlice = createSlice({
@@ -20,8 +20,6 @@ export const timerDurationSlice = createSlice({
   },
 });
 
-export const {} = timerDurationSlice.actions;
-
-export const selectCount = (state: RootState) => state.counter.value;
+export const { resetDuration } = timerDurationSlice.actions;
 
 export default timerDurationSlice.reducer;

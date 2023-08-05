@@ -12,11 +12,14 @@ import { ThemeContext } from '@/providers/ThemeContext';
 const Field: FC = () => {
   const { darkMode } = useContext(ThemeContext);
 
-  const words = faker.random.words(30);
+  const englishWords = faker.random.words(30);
+  // const ukrainianWords = faker.random.words(30);
+  // const russianWords = faker.random.words(30);
+  //TODO: add ukrainian and russian languages
 
   return (
     <div className={clsx(classes.field, !darkMode && 'light')}>
-      <div className={classes.wordsBox}>{words}</div>
+      <div className={classes.wordsBox}>{englishWords}</div>
     </div>
   );
 };

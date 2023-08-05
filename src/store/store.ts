@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import timerDurationReducer from '@/store/timerDurationSlice';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    timerDuration: timerDurationReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
