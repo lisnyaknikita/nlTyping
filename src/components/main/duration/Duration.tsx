@@ -9,11 +9,21 @@ import { durationButtons } from '@/utils/durationButtons';
 import clsx from 'clsx';
 
 import { ThemeContext } from '@/providers/ThemeContext';
+import { useAppDispatch } from '@/hooks/useAppDispatch';
+import { resetDuration } from '@/store/timerDurationSlice';
 
 const Duration: FC = () => {
+  const dispatch = useAppDispatch();
+
   const [isActive, setIsActive] = useState(1);
 
   const { darkMode } = useContext(ThemeContext);
+
+  const handleClick = (buttonId: number, buttonDuration: number) => {
+    setIsActive(buttonId);
+    dispatch(resetDuration(buttonDuration));
+    //FIXME:after click ui doesn't rerender
+  };
 
   return (
     <div className={classes.duration}>
@@ -30,7 +40,7 @@ const Duration: FC = () => {
                 !darkMode && 'light'
               )}
               key={button.id}
-              onClick={() => setIsActive(button.id)}
+              onClick={() => handleClick(button.id, button.duration)}
             >
               {button.duration}s
             </button>

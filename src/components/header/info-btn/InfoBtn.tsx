@@ -14,7 +14,6 @@ import classes from './InfoBtn.module.scss';
 import { FiInfo } from 'react-icons/fi';
 
 import clsx from 'clsx';
-import { Tooltip } from 'antd';
 import { ThemeContext } from '@/providers/ThemeContext';
 
 const InfoBtn: FC = () => {
@@ -24,7 +23,8 @@ const InfoBtn: FC = () => {
 
   const { darkMode } = useContext(ThemeContext);
 
-  const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
+  const handleClick: MouseEventHandler<HTMLButtonElement> &
+    MouseEventHandler<HTMLAnchorElement> = (e) => {
     setIsDropdownOpen((prev) => !prev);
   };
 
@@ -48,16 +48,15 @@ const InfoBtn: FC = () => {
 
   return (
     <>
-      <Tooltip placement='top' title='Info' mouseEnterDelay={0.2}>
-        <button
-          ref={dropdownRef}
-          type='button'
-          className={clsx(classes.infoBtn, !darkMode && 'light')}
-          onClick={handleClick}
-        >
-          <FiInfo />
-        </button>
-      </Tooltip>
+      <button
+        title='Info'
+        ref={dropdownRef}
+        type='button'
+        className={clsx(classes.infoBtn, !darkMode && 'light')}
+        onClick={handleClick}
+      >
+        <FiInfo />
+      </button>
 
       <div
         className={clsx(
@@ -69,7 +68,11 @@ const InfoBtn: FC = () => {
       >
         <p>
           GitHub:
-          <a href='https://github.com/lisnyaknikita/nlTyping' target='_blank'>
+          <a
+            href='https://github.com/lisnyaknikita/nlTyping'
+            target='_blank'
+            onClick={handleClick}
+          >
             https://github.com/lisnyaknikita/nlTyping
           </a>
         </p>
