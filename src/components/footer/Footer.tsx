@@ -17,7 +17,7 @@ const Footer: FC = () => {
 
   return (
     <>
-      <ThemePopup isPopUpOpen={isPopUpOpen} />
+      <ThemePopup isPopUpOpen={isPopUpOpen} setIsPopUpOpen={setIsPopUpOpen} />
       <footer className={classes.footer}>
         <button
           className={clsx(classes.footerBtn, !darkMode && 'light')}

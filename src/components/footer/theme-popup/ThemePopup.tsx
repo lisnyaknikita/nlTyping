@@ -9,17 +9,28 @@ import { ThemeContext } from '@/providers/ThemeContext';
 
 interface IThemePopupProps {
   isPopUpOpen: boolean;
+  setIsPopUpOpen: (status: boolean) => void;
 }
 
-const ThemePopup: FC<IThemePopupProps> = ({ isPopUpOpen }) => {
+const ThemePopup: FC<IThemePopupProps> = ({ isPopUpOpen, setIsPopUpOpen }) => {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
 
   const handleLightTheme = () => {
-    darkMode && toggleDarkMode();
+    if (darkMode) {
+      toggleDarkMode();
+      setIsPopUpOpen(false);
+    } else {
+      setIsPopUpOpen(false);
+    }
   };
 
   const handleDarkTheme = () => {
-    !darkMode && toggleDarkMode();
+    if (!darkMode) {
+      toggleDarkMode();
+      setIsPopUpOpen(false);
+    } else {
+      setIsPopUpOpen(false);
+    }
   };
 
   return (
