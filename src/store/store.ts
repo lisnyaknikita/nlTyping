@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import timerDurationReducer from '@/store/timerDurationSlice';
+import timerDurationSlice from './timerDurationSlice';
+import selectedLanguageSlice from './selectedLanguageSlice';
 
 export const store = configureStore({
   reducer: {
-    timerDuration: timerDurationReducer,
+    timerDuration: timerDurationSlice,
+    wordsLanguage: selectedLanguageSlice,
   },
 });
 
