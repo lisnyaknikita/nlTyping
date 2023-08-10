@@ -16,13 +16,10 @@ const Language: FC = () => {
 
   return (
     <div className={classes.language}>
-      <button
-        className={clsx(classes.languageBtn, !darkMode && 'light')}
-        onClick={() => setIsPopUpOpen((prev) => !prev)}
-      >
+      <button className={clsx(classes.languageBtn, !darkMode && 'light')} onClick={() => setIsPopUpOpen((prev) => !prev)}>
         Language
       </button>
-      <LanguagePopUp isPopUpOpen={isPopUpOpen} />
+      <LanguagePopUp isPopUpOpen={isPopUpOpen} setIsPopUpOpen={setIsPopUpOpen} />
     </div>
   );
 };
